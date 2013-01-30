@@ -1,0 +1,36 @@
+------------------------------------------------------------
+revno: 6
+committer: Jan-Klaas Kollhof
+timestamp: Wed 2007-07-25 18:24:19 +0000
+message:
+  fixed encoder to escape \
+------------------------------------------------------------
+revno: 5
+committer: Jan-Klaas Kollhof
+timestamp: Sun 2007-07-22 16:13:01 +0000
+message:
+  adding first code for ActionScript3 implementation
+------------------------------------------------------------
+revno: 4
+committer: Jan-Klaas Kollhof
+timestamp: Sun 2007-06-03 21:08:20 +0000
+message:
+  fixed faulty string formatting
+------------------------------------------------------------
+revno: 3
+committer: Jan-Klaas Kollhof
+timestamp: Sun 2007-04-29 15:55:19 +0000
+message:
+  making the new proxy compatible with the old json-rpc implementation (request id cannot be '')
+------------------------------------------------------------
+revno: 2
+committer: Jan-Klaas Kollhof
+timestamp: Sun 2007-04-29 15:22:41 +0000
+message:
+  typo fixed in tests
+------------------------------------------------------------
+revno: 1
+committer: Jan-Klaas Kollhof
+timestamp: Sun 2007-04-29 14:23:13 +0000
+message:
+  moving new implementation to trunk
