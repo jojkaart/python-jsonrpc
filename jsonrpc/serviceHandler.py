@@ -19,8 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 """
 
-from jsonrpc import loads, dumps, JSONEncodeException
-
+from json import JSONEncoder, JSONDecoder
 
 def ServiceMethod(fn):
     fn.IsServiceMethod = True
@@ -80,6 +79,7 @@ class ServiceHandler(object):
         return resultdata
 
     def translateRequest(self, data):
+        loads = JSONDecoder().decode
         try:
             req = loads(data)
         except:
@@ -104,9 +104,11 @@ class ServiceHandler(object):
             err = {"name": err.__class__.__name__, "message":err.message}
             rslt = None
 
+        dumps = JSONEncoder().encode
+
         try:
             data = dumps({"result":rslt,"id":id_,"error":err})
-        except JSONEncodeException, e:
+        except TypeError, e:
             err = {"name": "JSONEncodeException", "message":"Result Object Not Serializable"}
             data = dumps({"result":None, "id":id_,"error":err})
             
