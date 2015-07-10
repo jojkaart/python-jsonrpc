@@ -21,6 +21,7 @@
 
 import urllib
 from json import JSONEncoder, JSONDecoder
+from decimal import Decimal
 
 class JSONRPCException(Exception):
     def __init__(self, rpcError):
@@ -39,7 +40,7 @@ class ServiceProxy(object):
 
     def __call__(self, *args):
          dumps = JSONEncoder().encode
-         loads = JSONDecoder().decode
+         loads = JSONDecoder(parse_float=Decimal).decode
          postdata = dumps({"method": self.__serviceName, 'params': args, 'id':'jsonrpc'})
          respdata = urllib.urlopen(self.__serviceURL, postdata).read()
          resp = loads(respdata)
