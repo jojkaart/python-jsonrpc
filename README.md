@@ -10,6 +10,7 @@ Since the bazaar-repository has not been changed since 2007, i forked the projec
 
 I like the library, because it is very lightweight. When i eventually discover other issues while using python-jsonrpc in my main project, i will submit fixes to this repository here.
 
+This version has a slight modification by Joel Kaartinen <jkaartinen@iki.fi> to modify the behauviour when reading decimal numbers from a json file. This version now reads them with Decimal.
 
 license
 -------
